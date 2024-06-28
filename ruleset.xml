@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<ruleset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Moodle" xsi:noNamespaceSchemaLocation="../../../phpcs.xsd">
+    <!-- Check for cross-version support for PHP 7.4 and higher. -->
+    <config name="testVersion" value="7.4-"/>
+
+    <description>The Veri coding standard.</description>
+    <arg name="tab-width" value="4"/>
+
+    <file>.</file>
+
+    <rule ref="moodle"/>
+    <rule ref="moodle.Files.BoilerplateComment">
+        <exclude name="moodle.Files.BoilerplateComment.WrongLine"/>
+    </rule>
+    <exclude-pattern>*/vendor/*</exclude-pattern>
+    <exclude-pattern>config*\.php</exclude-pattern>
+
+</ruleset>

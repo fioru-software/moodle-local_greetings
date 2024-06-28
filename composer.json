@@ -1,0 +1,29 @@
+{
+    "name": "fioru/moodle-plugin_template",
+    "type": "moodle-local",
+    "extra": {
+        "installer-name": "greetings"
+    },
+    "scripts": {
+        "lint": "phplint ./ --exclude=vendor",
+        "check": "phpcs --standard=ruleset.xml",
+        "fix": "phpcbf --standard=ruleset.xml",
+        "secure": "security-checker security:check composer.lock",
+        "test": "phpunit --bootstrap vendor/autoload.php --testdox --colors=always --whitelist lib --coverage-text",
+        "all": [
+            "@composer check",
+            "@composer test",
+            "@composer secure"
+        ]
+    },
+    "require": {
+        "composer/installers": "~1.0"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.6",
+        "overtrue/phplint": "^4.0",
+        "phpunit/phpunit": "^9.5",
+        "enlightn/security-checker": "^1.9",
+        "fakerphp/faker": "^1.17"
+    }
+}
