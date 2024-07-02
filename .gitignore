@@ -1,0 +1,4 @@
+/vendor/
+*.swp
+.phplint-cache
+.phpunit.result.cache

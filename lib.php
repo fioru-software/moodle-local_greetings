@@ -22,8 +22,6 @@
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-defined('MOODLE_INTERNAL') || die();
-
 /**
  * Insert a link to index.php on the site front page navigation menu.
  *
@@ -81,6 +79,9 @@ function local_greetings_get_greeting($user) {
     $country = $user->country;
 
     switch ($country) {
+        case 'ZA':
+            $langstr = 'greetinguserza';
+            break;
         case 'AU':
             $langstr = 'greetinguserau';
             break;

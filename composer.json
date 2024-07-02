@@ -1,5 +1,5 @@
 {
-    "name": "fioru/moodle-plugin_template",
+    "name": "fioru/moodle-local_greetings",
     "type": "moodle-local",
     "extra": {
         "installer-name": "greetings"
@@ -24,6 +24,13 @@
         "overtrue/phplint": "^4.0",
         "phpunit/phpunit": "^9.5",
         "enlightn/security-checker": "^1.9",
-        "fakerphp/faker": "^1.17"
+        "fakerphp/faker": "^1.17",
+        "moodlehq/moodle-cs": "^3.2"
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
     }
 }

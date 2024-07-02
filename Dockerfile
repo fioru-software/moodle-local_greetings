@@ -6,6 +6,8 @@ ARG MOODLE_CODECHECKER_VERSION
 
 RUN apt update && apt install -y wget
 
+RUN docker-php-ext-enable xdebug
+
 RUN chown -R www-data:www-data /var/www /usr/local/src; \
   usermod -u 1000 www-data; \
   groupmod -g 1000 www-data
@@ -20,6 +22,9 @@ chmod +x /usr/local/bin/moosh
 
 # install dockerize
 RUN curl -sfL $(curl -s https://api.github.com/repos/powerman/dockerize/releases/latest | grep -i /dockerize-$(uname -s)-$(uname -m)\" | cut -d\" -f4) | install /dev/stdin /usr/local/bin/dockerize
+
+# install composer    
+COPY --from=composer:2 /usr/bin/composer /usr/local/bin/composer
 
 USER www-data
 

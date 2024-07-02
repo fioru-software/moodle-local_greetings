@@ -18,11 +18,11 @@
  * Main file to view greetings
  *
  * @package     local_greetings
- * @copyright   2022 Your name <your@email>
+ * @copyright   2024 Charles Mulder <charles@veri.ie>
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-require_once('../../config.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/config.php');
 require_once($CFG->dirroot . '/local/greetings/lib.php');
 require_once($CFG->dirroot . '/local/greetings/message_form.php');
 
@@ -54,7 +54,7 @@ if ($action == 'del') {
         $params = array('id' => $id);
 
         // Users without permission should only delete their own post.
-        if(!$deleteanypost) {
+        if (!$deleteanypost) {
             $params += ['userid' => $USER->id];
         }
 
